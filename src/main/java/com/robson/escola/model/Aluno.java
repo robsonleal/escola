@@ -1,5 +1,7 @@
 package com.robson.escola.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -25,7 +28,8 @@ public class Aluno {
 	Long id;
 	String nome;
 	String turma;
-	LocalDate dataMatricula;
+	@JsonFormat(pattern = "dd-MM-yyyy")
+	String dataMatricula;
 
 	@ManyToMany(mappedBy = "alunos")
 	List<Disciplina> disciplinas;

@@ -1,7 +1,6 @@
 package com.robson.escola.controller;
 
 import com.robson.escola.model.Disciplina;
-import com.robson.escola.model.Professor;
 import com.robson.escola.service.DisciplinaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
